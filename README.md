@@ -165,3 +165,7 @@ npm run lint          # ESLint
 ```bash
 npm test
 ```
+
+## Demo
+
+https://github.com/user-attachments/assets/9942969c-087e-48e4-ad00-74bdf6331b42

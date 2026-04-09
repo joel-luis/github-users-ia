@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom'
 import { jest } from '@jest/globals'
 
-// Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
   constructor() {}
   disconnect() {}
@@ -12,7 +11,6 @@ global.IntersectionObserver = class IntersectionObserver {
   unobserve() {}
 }
 
-// Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation((query) => ({

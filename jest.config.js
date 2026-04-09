@@ -1,27 +1,28 @@
-const nextJest = require("next/jest")
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
-  dir: "./",
+  dir: './'
 })
 
 const customJestConfig = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testEnvironment: "jest-environment-jsdom",
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/$1",
+    '^@/(.*)$': '<rootDir>/$1'
   },
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   collectCoverageFrom: [
-    "app/**/*.{js,jsx,ts,tsx}",
-    "components/**/*.{js,jsx,ts,tsx}",
-    "hooks/**/*.{js,jsx,ts,tsx}",
-    "store/**/*.{js,jsx,ts,tsx}",
-    "!**/*.d.ts",
-    "!**/node_modules/**",
-    "!**/.next/**",
-    "!**/coverage/**",
-    "!app/layout.{js,jsx,ts,tsx}",
-  ],
+    'app/**/*.{js,jsx,ts,tsx}',
+    'components/**/*.{js,jsx,ts,tsx}',
+    'hooks/**/*.{js,jsx,ts,tsx}',
+    'store/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+    '!**/.next/**',
+    '!**/coverage/**',
+    '!app/layout.{js,jsx,ts,tsx}'
+  ]
 }
 
 module.exports = createJestConfig(customJestConfig)
